@@ -1,5 +1,5 @@
 {
-  "name": "GinQuest",
+  "name": "ginquest",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -19,6 +19,7 @@
     "babel-jest": "24.1.0",
     "jest": "24.1.0",
     "metro-react-native-babel-preset": "0.52.0",
+    "react-addons-test-utils": "^15.6.2",
     "react-native-typescript-transformer": "^1.2.11",
     "react-test-renderer": "16.6.3",
     "ts-jest": "^24.0.0",
@@ -33,7 +34,7 @@
     ],
     "transform": {
       "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
-      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      "\\.(ts|tsx)$": "ts-jest"
     },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
     "testPathIgnorePatterns": [

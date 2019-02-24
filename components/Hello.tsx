@@ -1,36 +1,37 @@
 // components/Hello.tsx
-import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { Button, StyleSheet, Text, View } from 'react-native'
 
 export interface Props {
-    name: string;
-    enthusiasmLevel?: number;
+    name: string
+    enthusiasmLevel?: number
 }
 
 interface State {
-    enthusiasmLevel: number;
+    enthusiasmLevel: number
 }
 
 export class Hello extends React.Component<Props, State> {
     constructor(props: Props) {
-        super(props);
+        super(props)
 
         if ((props.enthusiasmLevel || 0) <= 0) {
-            throw new Error('You could be a little more enthusiastic. :D');
+            throw new Error('You could be a little more enthusiastic. :D')
         }
 
         this.state = {
             enthusiasmLevel: props.enthusiasmLevel || 1,
-        };
+        }
     }
 
-    onIncrement = () =>
-        this.setState({ enthusiasmLevel: this.state.enthusiasmLevel + 1 });
-    onDecrement = () =>
-        this.setState({ enthusiasmLevel: this.state.enthusiasmLevel - 1 });
-    getExclamationMarks = (numChars: number) => Array(numChars + 1).join('!');
+    private onIncrement = () =>
+        this.setState({ enthusiasmLevel: this.state.enthusiasmLevel + 1 })
+    private onDecrement = () =>
+        this.setState({ enthusiasmLevel: this.state.enthusiasmLevel - 1 })
+    private getExclamationMarks = (numChars: number) =>
+        Array(numChars + 1).join('!')
 
-    render() {
+    public render() {
         return (
             <View style={styles.root}>
                 <Text style={styles.greeting}>
@@ -59,7 +60,7 @@ export class Hello extends React.Component<Props, State> {
                     </View>
                 </View>
             </View>
-        );
+        )
     }
 }
 
@@ -84,4 +85,4 @@ const styles = StyleSheet.create({
         color: '#999',
         fontWeight: 'bold',
     },
-});
+})
